@@ -8,6 +8,6 @@ export class OfertasService {
   constructor(private httpc: HttpClient) {}
 
   public getOfertas(): Observable<Oferta[]> {
-    return this.httpc.get<Oferta[]>('http://localhost:3000/ofertas');
+    return this.httpc.get<Oferta[]>('http://localhost:3000/ofertas?destaque=true');
   }
 }

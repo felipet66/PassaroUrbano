@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
