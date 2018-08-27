@@ -1,7 +1,12 @@
 import { Oferta } from './shared/oferta.model';
+import { Http } from '@angular/http';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class OfertasService {
+  constructor(private http: Http){
 
+  }
   public ofertas: Oferta[] = [
                             {
                               id: 1,
@@ -53,5 +58,11 @@ export class OfertasService {
                           ];
   public getOfertas(): Array<Oferta> {
     return this.ofertas;
+  }
+
+  public getOfertas2(): Promise<Oferta[]>{
+    return new Promise((resolve, reject) => {
+      resolve( this.ofertas );
+    });
   }
 }
