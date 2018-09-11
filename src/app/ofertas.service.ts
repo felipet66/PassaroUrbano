@@ -11,7 +11,7 @@ export class OfertasService {
     return this.httpc.get<Oferta[]>('http://localhost:3000/ofertas?destaque=true');
   }
 
-  public getOfertasPorCategoria(categoria: string) : Observable<Oferta[]>{
+  public getOfertasPorCategoria(categoria: string): Observable<Oferta[]> {
     return this.httpc.get<Oferta[]>(`http://localhost:3000/ofertas?categoria=${categoria}`);
   }
 }
