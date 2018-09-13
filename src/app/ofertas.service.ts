@@ -28,4 +28,12 @@ export class OfertasService {
       return resposta.json()[0].descricao;
     });
   }
+
+  public getOndeFicaPorId(id: number): Promise<string> {
+    return this.httpc.get(`${URL_API}/onde-fica?id=${id}`)
+    .toPromise()
+    .then((resposta: any) => {
+      return resposta.json()[0].descricao;
+    });
+  }
 }
