@@ -6,7 +6,7 @@ import { OfertasService } from '../../ofertas.service';
   selector: 'app-como-usar',
   templateUrl: './como-usar.component.html',
   styleUrls: ['./como-usar.component.css'],
-  providers: [ OfertasService]
+  providers: [ OfertasService ]
 })
 export class ComoUsarComponent implements OnInit {
 
@@ -19,8 +19,8 @@ export class ComoUsarComponent implements OnInit {
 
   ngOnInit() {
     this.ofertasService.getComoUsarOfertaPorId( this.route.parent.snapshot.params['id'] )
-    .then((resposta: any) => {
-      console.log(resposta);
+    .then((descricao: string) => {
+      this.comoUsar = descricao;
     });
   }
 

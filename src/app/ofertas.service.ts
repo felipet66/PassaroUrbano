@@ -25,15 +25,15 @@ export class OfertasService {
     return this.httpc.get(`${URL_API}/como-usar?id=${id}`)
     .toPromise()
     .then((resposta: any) => {
-      return resposta.json()[0].descricao;
+      return resposta[0].descricao;
     });
   }
 
-  public getOndeFicaPorId(id: number): Promise<string> {
+  public getOndeFicaOfertaPorId(id: number): Promise<string> {
     return this.httpc.get(`${URL_API}/onde-fica?id=${id}`)
     .toPromise()
     .then((resposta: any) => {
-      return resposta.json()[0].descricao;
+      return resposta[0].descricao;
     });
   }
 }
