@@ -25,7 +25,7 @@ export class OfertaComponent implements OnInit {
     });
     this.onSubscribe();
 
-    let tempo = interval(500);
+    const tempo = interval(2000);
 
     tempo.subscribe((intervalo: number) => {
       console.log(intervalo);
