@@ -24,7 +24,7 @@ export class OfertasService {
   public getComoUsarOfertaPorId(id: number): Promise<string> {
     return this.httpc.get(`${URL_API}/como-usar?id=${id}`)
     .toPromise()
-    .then((resposta: any) => {
+    .then((resposta: Response) => {
       return resposta[0].descricao;
     });
   }
@@ -32,8 +32,12 @@ export class OfertasService {
   public getOndeFicaOfertaPorId(id: number): Promise<string> {
     return this.httpc.get(`${URL_API}/onde-fica?id=${id}`)
     .toPromise()
-    .then((resposta: any) => {
+    .then((resposta: Response) => {
       return resposta[0].descricao;
     });
+  }
+
+  public pesquisaOfertas(termo: string): Observable<Oferta[]> {
+    return this.httpc.get<Oferta[]>(`${URL_API}/ofertas?descricao_oferta_like=${termo}`);
   }
 }
