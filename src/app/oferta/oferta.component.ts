@@ -25,11 +25,11 @@ export class OfertaComponent implements OnInit {
     });
     this.onSubscribe();
 
-    const tempo = interval(2000);
+    /* const tempo = interval(2000);
 
     tempo.subscribe((intervalo: number) => {
       console.log(intervalo);
-    });
+    }); */
   }
 
   onSubscribe() {
