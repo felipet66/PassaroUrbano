@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { Oferta } from '../shared/oferta.model';
 })
 export class HeaderComponent implements OnInit {
   public ofertas: Oferta[];
+  public subjectPesquisa: Subject<string> = new Subject<string>();
 
   constructor( private ofertasService: OfertasService ) { }
 
