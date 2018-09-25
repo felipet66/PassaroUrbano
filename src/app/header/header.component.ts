@@ -10,6 +10,7 @@ import { Oferta } from '../shared/oferta.model';
 })
 export class HeaderComponent implements OnInit {
   public ofertas: Oferta[];
+  public timeout: OfertasService;
 
   constructor( private ofertasService: OfertasService ) { }
 
@@ -23,8 +24,8 @@ export class HeaderComponent implements OnInit {
           console.log('NENHUMA OFERTA');
           this.ofertas = [];
         } else {
-        this.ofertas = result;
-        console.log( result );
+          this.ofertas = result;
+          console.log( result );
         }
       },
       (erro: any) => {
@@ -36,8 +37,7 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  ngOnChanges() {
-   console.log('oi');
+  public limpaPesquisa(): void {
+    this.ofertas = null;
   }
 }
